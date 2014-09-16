@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Github Issue Mover</title>
+    <link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    
+    <script async type="application/dart" src="index.dart"></script>
+    <script async src="packages/browser/dart.js"></script>
+    
+    <link rel="stylesheet" href="static/css/style.css">
+  </head>
+  <body>
+    <div id=top><div id="logo">Logo</div>Github Issue Mover <div id="user"><img id="photo"><span id="login"></span><span id="logout"><a href="/logout">logout</a></span></div></div>
+    
+    <div id="explanation">
+      You know what's hard? Moving issues between repos in Github.
+      <br />
+      Well, in fact, it's impossible so this tool will help you:
+      <ul>
+        <li>Create a copy of the issue in the destination repo
+        <li>Close the original issue
+        <li>Add references between the issues
+      </ul>
+    </div>
+    
+    <div id="authorize">First you need to allow us to use the Github API:
+      <div id="auth_error">{{error}}</div>
+      <button class="pure-button" id="auth_button">Authorize Github</button>
+    </div>
+    
+    <div id="authorized">
+    
+    <table><tr><td>
+    Issue to move <br />
+    <input type="text" name="issue" placeholder="user/repo#num"><br />
+    </td><td>
+    Destination repo <br />
+    <input type="text" name="repo" placeholder="user/repo">
+    </td><td>
+    <button class="pure-button" id="move">Move issue!</button>
+    </td></tr></table>
+    
+    
+    
+    
+    
+    </div>
+
+  </body>
+</html>
