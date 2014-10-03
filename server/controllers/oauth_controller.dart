@@ -40,7 +40,8 @@ class OauthController {
     req.request.session["error"] = null;
 
     String accessToken = req.request.session["access_token"];
-    Cookie accessTokenCookie = new Cookie("access_token", accessToken != null ? accessToken : "");
+    Cookie accessTokenCookie = new Cookie("access_token", accessToken != null ? accessToken : "")
+        ..httpOnly = false;
         //..secure = true;
     req.request.response.cookies.add(accessTokenCookie);
     return "index";
