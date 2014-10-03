@@ -67,6 +67,6 @@ The command above will create a new [Google Compute Engine](https://cloud.google
 
 ### App Engine
 
-It can also be deployed on [App Engine Managed VM](https://cloud.google.com/appengine/docs/managed-vms/)
+It can also be deployed on [App Engine Managed VM](https://cloud.google.com/appengine/docs/managed-vms/) using:
 
 `gcloud preview app deploy <path_to>/app.yaml --server=preview.appengine.google.com`
