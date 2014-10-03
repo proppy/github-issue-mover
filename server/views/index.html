@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Github Issue Mover</title>
     <link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     
     <script async type="application/dart" src="index.dart"></script>
     <script async src="packages/browser/dart.js"></script>
@@ -14,7 +13,7 @@
     <link rel="stylesheet" href="static/css/style.css">
   </head>
   <body>
-    <div id=top><div id="logo">Logo</div>Github Issue Mover <div id="user"><img id="photo"><span id="login"></span><span id="logout"><a href="/logout">logout</a></span></div></div>
+    <div id=top><div id="logo">Logo</div>Github Issue Mover <div id="user"><img id="photo"><a id="login" target="_blank"></a><span id="logout"><a href="/logout">logout</a></span></div></div>
     
     <div id="explanation">
       You know what's hard? Moving issues between repos in Github.
@@ -25,6 +24,9 @@
         <li>Close the original issue
         <li>Add references between the issues
       </ul>
+      <div id="hide">
+        Hide
+      </div>
     </div>
     
     <div id="authorize">First you need to allow us to use the Github API:
@@ -34,20 +36,54 @@
     
     <div id="authorized">
     
-    <table><tr><td>
-    Issue to move <br />
-    <input type="text" name="issue" placeholder="user/repo#num"><br />
-    </td><td>
-    Destination repo <br />
-    <input type="text" name="repo" placeholder="user/repo">
-    </td><td>
-    <button class="pure-button" id="move">Move issue!</button>
-    </td></tr></table>
+      <table class="form"><tr>
+      
+      <td>
+      Issue to move <br />
+      <input type="text" name="issue" id="issue" placeholder="owner/repo#num" tabindex="1">
+      <div id="issueError">
+      </div>
+      <div id="issueOverview">
+        <div id="issueUser"><img id="issueUserAvatar"><a target="_blank" id="issueUserName"></a></div>
+        <a id="issueTitle" target="_blank"></a>
+        <span id="issueBody"></span>
+        <span id="issueComments"></span>
+      </div>
+      </td>
+      
+      <td>
+      Destination repo <br />
+      <input type="text" name="repo" id="repo" placeholder="owner/repo" tabindex="2">
+      <div id="repoError">
+      </div>
+      <div id="repoOverview">
+        <a id="repoName" target="_blank"></a>
+        <div id="repoDescription"></div>
+      </div>
+      </td>
+      
+      <td>
+      <button class="pure-button" id="move" disabled="disabled" tabindex="3">Move issue!</button>
+      </td>
+      </tr></table>
+    </div>
     
-    
-    
-    
-    
+    <div id="moveResultContainer">
+      <div id="overlay"></div>
+      <div id="content"><h2>Moving Issue:</h2>
+      Copy issue in destination repo <span class="box">&#x2610;</span>
+      <span id="copyIssueCheck" class="check">&#x2713;</span><br />
+      Copy comments in new issue <span id="numComments"></span><span class="box">&#x2610;</span>
+      <span id="copyCommentsCheck" class="check">&#x2713;</span><br />
+      Reference new issue in original issue <span class="box">&#x2610;</span>
+      <span id="referenceCommentCheck" class="check">&#x2713;</span><br />
+      Close original issue <span class="box">&#x2610;</span>
+      <span id="closeIssueCheck" class="check">&#x2713;</span><br /><br />
+      <div class="center"><a id="oldIssueLink" target="_blank"></a></div>
+      <div id="arrow">&#x27a7;</div>
+      <div class="center"><a id="newIssueLink" target="_blank"></a></div>
+      <br /><button class="pure-button" id="close" disabled="disabled" tabindex="4">Close</button>
+      </div>
     </div>
 
   </body>
