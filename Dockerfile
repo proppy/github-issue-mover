@@ -12,24 +12,20 @@
 FROM google/dart
 MAINTAINER Nicolas Garnier <nivco@google.com>
 
-ADD app.yaml       /app/app.yaml
-ADD dart_app.yaml       /app/dart_app.yaml
+ADD /github_oauth /app/github_oauth
+
+ADD server/pubspec.yaml /app/server/pubspec.yaml
+RUN cd /app/server && pub get
+
+ADD client/pubspec.yaml /app/client/pubspec.yaml
+RUN cd /app/client && pub get
+
 ADD server          /app/server
-ADD github_oauth          /app/github_oauth
 ADD client          /app/client
+RUN cd /app/client && pub build
+ADD dart_app.yaml       /app/dart_app.yaml
 
-# Build the app.
-WORKDIR /app/client
-RUN pub build
-WORKDIR /app/server
-RUN pub get
-
-# Expose port 8080. You should change it to the port(s) your app is serving on.
 EXPOSE 8080
-
-# Entrypoint. Whenever the container is started the following command is executed in your container.
-# In most cases it simply starts your app.
-WORKDIR /app/server
 
 CMD []
 ENTRYPOINT ["/usr/bin/dart", "/app/server/server.dart"]
