@@ -5,7 +5,7 @@ import 'package:logging/logging.dart';
 import 'package:forcemvc/force_mvc.dart';
 import 'package:github_oauth/githuboauth.dart';
 
-part 'controllers/oauth_controller.dart';
+part '../controllers/oauth_controller.dart';
 
 void main() {
   // Setup what port to listen to
@@ -16,11 +16,11 @@ void main() {
   // Create a force server
   WebServer server = new WebServer(host: "0.0.0.0",
                                    port: port,
-                                   staticFiles: '../client/static/',
-                                   clientFiles: '../client/build/web/', // use this on prod
+                                   staticFiles: '../../client/static/',
+                                   clientFiles: '../../client/build/web/', // use this on prod
                                    //clientFiles: '../client/web/', // use this for dev
                                    clientServe: serveClient,
-                                   views: "views/");
+                                   views: "../views/");
   // register yaml files
   server.loadValues("../app.yaml");
 

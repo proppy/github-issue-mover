@@ -50,4 +50,4 @@ WORKDIR /container/server
 ENTRYPOINT ["dart"]
 
 # Change this to your starting dart.
-CMD ["/container/server/server.dart"]
+CMD ["/container/server/bin/server.dart"]
