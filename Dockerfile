@@ -13,6 +13,7 @@ FROM google/dart
 MAINTAINER Nicolas Garnier <nivco@google.com>
 
 ADD app.yaml       /app/app.yaml
+ADD dart_app.yaml       /app/dart_app.yaml
 ADD server          /app/server
 ADD github_oauth          /app/github_oauth
 ADD client          /app/client
