@@ -2,7 +2,6 @@ version: v1beta1
 containers:
   - name: github-issue-mover
     image: nicolasgarnier/github-issue-mover
-    command: ['dart', '/container/server/server.dart']
     ports:
       - name: http
         hostPort: 80
