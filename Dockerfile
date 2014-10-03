@@ -1,4 +1,4 @@
-# Install a dart container for the Githi Issue Mover project.
+# Install a dart container for the Github Issue Mover project.
 # Your dart server app will be accessible via HTTP on container port 8080. The port can be changed.
 # You should adapt this Dockerfile to your needs.
 # If you are new to Dockerfiles please read 
@@ -9,26 +9,8 @@
 # > docker build -t githubissuemover github.com/nicolasgarnier/github-issue-mover
 # > docker run -p 80:8080 -d githubissuemover
 
-FROM stackbrew/ubuntu:13.10
+FROM google/dart-runtime
 MAINTAINER Nicolas Garnier <nivco@google.com>
-
-# Install Dart SDK. Do not touch this until you know what you are doing.
-# We do not install darteditor nor dartium because this is a server container.
-# See: http://askubuntu.com/questions/377233/how-to-install-google-dart-in-ubuntu
-RUN apt-get update
-RUN apt-get install -y software-properties-common python-software-properties
-RUN apt-add-repository ppa:hachre/dart
-RUN apt-get -y update
-RUN apt-get install -y dartsdk
-
-# Install the dart server app. 
-# Comment in necessary parts of your dart package necessary to run "pub build"
-# and necessary for your working app.
-# Please check the following links to learn more about pub and build dart apps
-# automatically.
-# - https://www.dartlang.org/tools/pub/
-# - https://www.dartlang.org/tools/pub/package-layout.html
-# - https://www.dartlang.org/tools/pub/transformers
 
 ADD app.yaml       /container/app.yaml
 ADD server          /container/server
