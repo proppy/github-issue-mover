@@ -53,7 +53,15 @@ This will create a new issue which is a copy of the original one, with mentions 
 
 This app runs in a Docker container and has an [automated Build repo](https://registry.hub.docker.com/u/nicolasgarnier/github-issue-mover) on Docker hub. It can easilly be deployed Google Compute Engine with this command:
 
-`gcloud compute instances create docker-1 --image container-vm-v20140929 --metadata-from-file google-container-manifest=<path to>/containers.yaml --image-project google-containers --zone us-central1-a --tags http-server --machine-type n1-standard-4`
+```
+gcloud compute instances create <instance_name>
+    --image container-vm-v20140929
+    --metadata-from-file google-container-manifest=<path_to>/containers.yaml
+    --image-project google-containers
+    --zone us-central1-a
+    --tags http-server
+    --machine-type n1-standard-4
+```
 
 The command above will create a new [Google Compute Engine](https://cloud.google.com/compute/) Instance with Dart and the Github Issue Mover app deployed and running.
 
@@ -61,4 +69,4 @@ The command above will create a new [Google Compute Engine](https://cloud.google
 
 It can also be deployed on [App Engine Managed VM](https://cloud.google.com/appengine/docs/managed-vms/)
 
-`gcloud preview app deploy <path to>/app.yaml --server=preview.appengine.google.com`
+`gcloud preview app deploy <path_to>/app.yaml --server=preview.appengine.google.com`
