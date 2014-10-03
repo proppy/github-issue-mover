@@ -1,0 +1,4 @@
+
+Deploy a new running instance on Google Compute engine like this:
+
+gcloud compute instances create docker-1 --image container-vm-v20140929 --metadata-from-file google-container-manifest=<path to>/containers.yaml --image-project google-containers --zone us-central1-a --tags http-server --machine-type n1-standard-4

@@ -1,4 +1,4 @@
-# Install a dart container for demonstration purposes.
+# Install a dart container for the Githi Issue Mover project.
 # Your dart server app will be accessible via HTTP on container port 8080. The port can be changed.
 # You should adapt this Dockerfile to your needs.
 # If you are new to Dockerfiles please read 
@@ -6,8 +6,8 @@
 # to learn more about Dockerfiles.
 #
 # This file is hosted on github. Therefore you can start it in docker like this:
-# > docker build -t containerdart github.com/nicolasgarnier/github-issue-mover
-# > docker run -p 8888:8080 -d containerdart
+# > docker build -t githubissuemover github.com/nicolasgarnier/github-issue-mover
+# > docker run -p 80:8080 -d githubissuemover
 
 FROM stackbrew/ubuntu:13.10
 MAINTAINER Nicolas Garnier <nivco@google.com>
