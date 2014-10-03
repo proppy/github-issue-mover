@@ -12,7 +12,7 @@ The tool is hosted online at http://www.githubissuemover.com
 
 It looks like this:
 
-![Github Issue Mover](https://raw.githubusercontent.com/nicolasgarnier/github-issue-mover/master/README_assets/app.png)
+<img width="600px" src="https://raw.githubusercontent.com/nicolasgarnier/github-issue-mover/master/README_assets/app.png">
 
 
 ##How to use
@@ -27,7 +27,7 @@ into the "Issue to Move" text field. It will get automatically transformed to th
 
 The tool will extract some information about the issue if it's accessible to your user:
 
-![Issue details](https://raw.githubusercontent.com/nicolasgarnier/github-issue-mover/master/README_assets/issue.png)
+<img width="300px" src="https://raw.githubusercontent.com/nicolasgarnier/github-issue-mover/master/README_assets/issue.png">
 
 You can do the same for the "Destination Repo" text field and copy paste:
 
@@ -39,15 +39,15 @@ It will get automatically transformed to the _short_ Github URL for repos:
 
 and some information will get extracted as well:
 
-![Repo details](https://raw.githubusercontent.com/nicolasgarnier/github-issue-mover/master/README_assets/repo.png)
+<img width="300px" src="https://raw.githubusercontent.com/nicolasgarnier/github-issue-mover/master/README_assets/repo.png">
 
 Once existing issue and repo have been set you can start the move process:
 
-![Repo details](https://raw.githubusercontent.com/nicolasgarnier/github-issue-mover/master/README_assets/move.png)
+<img width="300px" src="https://raw.githubusercontent.com/nicolasgarnier/github-issue-mover/master/README_assets/move.png">
 
 This will create a new issue which is a copy of the original one, with mentions of every users who commented on the bug. The two issues will also references themselves:
 
-![Repo details](https://raw.githubusercontent.com/nicolasgarnier/github-issue-mover/master/README_assets/result.png)
+<img width="600px" src="https://raw.githubusercontent.com/nicolasgarnier/github-issue-mover/master/README_assets/result.png">
 
 ##Installing your own instance
 
