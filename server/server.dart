@@ -22,7 +22,7 @@ void main() {
                                    clientServe: serveClient,
                                    views: "views/");
   // register yaml files
-  server.loadValues("../app.yaml");
+  server.loadValues("../dart_app.yaml");
 
   // Set up logger.
   server.setupConsoleLog(Level.FINEST);

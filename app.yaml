@@ -1,6 +1,4 @@
 # Below for App Engine
-name: Github Issue Mover
-application: github-issue-mover
 version: 1
 runtime: dart
 api_version: 1
@@ -9,17 +7,3 @@ threadsafe: true
 handlers:
   - url: /.*
     script: dynamic
-
-# Below for DartForce
-server:
-- url: /
-
-client:
-- url: /web
-  match: preregex
-  dir: web
-
-- url: /static
-  match: preregex
-  dir: static
-
