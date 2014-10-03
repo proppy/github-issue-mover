@@ -29,7 +29,6 @@ RUN apt-get install -y dartsdk
 # - https://www.dartlang.org/tools/pub/
 # - https://www.dartlang.org/tools/pub/package-layout.html
 # - https://www.dartlang.org/tools/pub/transformers
-ADD pubspec.yaml  /container/pubspec.yaml
 
 ADD app.yaml       /container/app.yaml
 ADD server          /container/server
