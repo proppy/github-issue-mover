@@ -9,7 +9,7 @@
 # > docker build -t githubissuemover github.com/nicolasgarnier/github-issue-mover
 # > docker run -p 80:8080 -d githubissuemover
 
-FROM google/dart-runtime
+FROM google/dart
 MAINTAINER Nicolas Garnier <nivco@google.com>
 
 ADD app.yaml       /container/app.yaml
