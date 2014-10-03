@@ -123,6 +123,10 @@ h1, p {
 	padding: 40px;
 }
 
+.form {
+	margin-left: 30px;
+}
+
 #move {
 	height: 38px;
 	margin-top: 34px;
