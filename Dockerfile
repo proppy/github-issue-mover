@@ -21,8 +21,10 @@ ADD client/pubspec.yaml /app/client/pubspec.yaml
 RUN cd /app/client && pub get
 
 ADD client          /app/client
+RUN cd /app/client && pub get # fix host symlinks if any
 RUN cd /app/client && pub build
 ADD server          /app/server
+RUN cd /app/server && pub get # fix host symlinks if any
 ADD dart_app.yaml       /app/dart_app.yaml
 
 EXPOSE 8080
