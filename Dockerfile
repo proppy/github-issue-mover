@@ -38,6 +38,8 @@ ADD client          /container/client
 # Build the app.
 WORKDIR /container/client
 RUN pub build
+WORKDIR /container/server
+RUN pub get
 
 # Expose port 8080. You should change it to the port(s) your app is serving on.
 EXPOSE 8080
@@ -48,4 +50,4 @@ WORKDIR /container/server
 ENTRYPOINT ["dart"]
 
 # Change this to your starting dart.
-CMD ["/container/server/bin/server.dart"]
+CMD ["/container/server/server.dart"]

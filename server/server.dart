@@ -5,7 +5,7 @@ import 'package:logging/logging.dart';
 import 'package:forcemvc/force_mvc.dart';
 import 'package:github_oauth/githuboauth.dart';
 
-part '../controllers/oauth_controller.dart';
+part 'controllers/oauth_controller.dart';
 
 void main() {
   // Setup what port to listen to
