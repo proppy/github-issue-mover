@@ -1,8 +1,9 @@
 # Below for App Engine
 version: 1
-runtime: dart
+runtime: custom
 api_version: 1
 threadsafe: true
+vm: true
 
 handlers:
   - url: /.*
