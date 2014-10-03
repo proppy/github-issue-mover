@@ -38,8 +38,6 @@ ADD client          /container/client
 # Build the app.
 WORKDIR /container/client
 RUN pub build
-WORKDIR /container/server
-RUN pub build
 
 # Expose port 8080. You should change it to the port(s) your app is serving on.
 EXPOSE 8080
