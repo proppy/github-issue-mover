@@ -20,9 +20,9 @@ RUN cd /app/server && pub get
 ADD client/pubspec.yaml /app/client/pubspec.yaml
 RUN cd /app/client && pub get
 
-ADD server          /app/server
 ADD client          /app/client
 RUN cd /app/client && pub build
+ADD server          /app/server
 ADD dart_app.yaml       /app/dart_app.yaml
 
 EXPOSE 8080
